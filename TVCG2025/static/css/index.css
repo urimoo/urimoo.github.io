@@ -100,7 +100,7 @@ body {
 }
 
 .hero-body {
-    padding: 4rem 1.5rem;
+    padding: 4rem;
 }
 .hero-body-l {
     padding: 4rem 4rem;
@@ -205,7 +205,7 @@ body {
 
 .author-block {
   display: inline-block;
-  margin-right: -0.5rem;
+  margin-right: -0.3rem;
 }
 
 .publication-banner img {
