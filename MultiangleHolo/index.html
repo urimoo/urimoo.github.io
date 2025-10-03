@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Primary Meta Tags -->
+    <!-- TODO: Replace with your paper title and author names -->
+    <meta name="title" content="Multi-illumination-interfered Neural Holography with Expanded Eyebox - Xinxing Xia, Pengfei Mi, Yiqing Tao, Xiangyu Meng, Wenbin Zhou, Yingjie Yu, Yifan Peng">
+    <!-- TODO: Write a compelling 150-160 character description of your research -->
+    <meta name="description" content="Holography has immense potential for near-eye displays in the realms of virtual and augmented reality (VR/AR), offering natural 3D depth cues through wavefront reconstruction. However, a critical challenge is balancing the field of view (FOV) with the eyebox, fundamentally constrained by the étendue limitation of current hardware. Additionally, holographic image quality is often compromised due to discrepancies between actual wave propagation behavior and simulation models. This study addresses these challenges by expanding the eyebox through the use of multi-angle illumination, and by enhancing image quality with end-to-end pupil-aware hologram optimization. Further, energy efficiency is significantly improved by incorporating higher-order diffractions and pupil constraints into the simulation. We explore a Pupil-HOGD optimization algorithm for multi-angle illumination and validate it with a dual-angle holographic display prototype. Integrated with camera calibration and tracked eye position, the developed Pupil-HOGD algorithm can improve image quality and expand the eyebox by 50% in the horizontal direction. We envision the proposed approach paves the way for extending the space-bandwidth product (SBP) of holographic displays, enabling broader applications in immersive, high-quality visual computing environments.">
+    <!-- TODO: Add 5-10 relevant keywords for your research area -->
+    <meta name="keywords" content="Holographic display, Eyebox expansion, Multi-angle illumination, Pupil-aware">
+    <!-- TODO: List all authors -->
+    <meta name="author" content="Xinxing Xia, Pengfei Mi, Yiqing Tao, Xiangyu Meng, Wenbin Zhou, Yingjie Yu, Yifan Peng">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <!-- TODO: Replace with your institution or lab name -->
+    <meta property="og:site_name" content="School of Mechatronic Engineering and Automation, Shanghai University, Key Laboratory of Silicate Cultural Relics Conservation, Ministry of Education">
+    <!-- TODO: Same as paper title above -->
+    <meta property="og:title" content="Multi-illumination-interfered Neural Holography with Expanded Eyebox">
+    <!-- TODO: Same as description above -->
+    <meta property="og:description" content="Holography has immense potential for near-eye displays in the realms of virtual and augmented reality (VR/AR), offering natural 3D depth cues through wavefront reconstruction. However, a critical challenge is balancing the field of view (FOV) with the eyebox, fundamentally constrained by the étendue limitation of current hardware. Additionally, holographic image quality is often compromised due to discrepancies between actual wave propagation behavior and simulation models. This study addresses these challenges by expanding the eyebox through the use of multi-angle illumination, and by enhancing image quality with end-to-end pupil-aware hologram optimization. Further, energy efficiency is significantly improved by incorporating higher-order diffractions and pupil constraints into the simulation. We explore a Pupil-HOGD optimization algorithm for multi-angle illumination and validate it with a dual-angle holographic display prototype. Integrated with camera calibration and tracked eye position, the developed Pupil-HOGD algorithm can improve image quality and expand the eyebox by 50% in the horizontal direction. We envision the proposed approach paves the way for extending the space-bandwidth product (SBP) of holographic displays, enabling broader applications in immersive, high-quality visual computing environments.">
+    <!-- TODO: Replace with your actual website URL -->
+    <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
+    <!-- TODO: Create a 1200x630px preview image and update path -->
+    <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Multi-illumination-interfered Neural Holography with Expanded Eyebox">
+    <meta property="article:published_time" content="2025-09-29T00:00:00.000Z">
+    <meta property="article:author" content="Xinxing Xia">
+    <meta property="article:section" content="Research">
+    <meta property="article:tag" content="Holographic display">
+    <meta property="article:tag" content="Eyebox expansion">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- TODO: Replace with your lab/institution Twitter handle -->
+    <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
+    <!-- TODO: Replace with first author's Twitter handle -->
+    <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
+    <!-- TODO: Same as paper title above -->
+    <meta name="twitter:title" content="PAPER_TITLE">
+    <!-- TODO: Same as description above -->
+    <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+    <!-- TODO: Same as social preview image above -->
+    <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+    <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
+
+    <!-- Academic/Research Specific -->
+    <meta name="citation_title" content="PAPER_TITLE">
+    <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
+    <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
+    <meta name="citation_publication_date" content="2024">
+    <meta name="citation_conference_title" content="CONFERENCE_NAME">
+    <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
+
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#2563eb">
+    <meta name="msapplication-TileColor" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://ajax.googleapis.com">
+    <link rel="preconnect" href="https://documentcloud.adobe.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+    <!-- TODO: Replace with your paper title and authors -->
+    <title>Multi-illumination-interfered Neural Holography with Expanded Eyebox - Xinxing Xia</title>
+
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+    <link rel="apple-touch-icon" href="static/images/favicon.ico">
+
+    <!-- Critical CSS - Load synchronously -->
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <!-- Non-critical CSS - Load asynchronously -->
+    <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <!-- Fallback for browsers that don't support preload -->
+    <noscript>
+        <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+        <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+        <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    </noscript>
+
+    <!-- Fonts - Optimized loading -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Defer non-critical JavaScript -->
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script defer src="static/js/bulma-carousel.min.js"></script>
+    <script defer src="static/js/bulma-slider.min.js"></script>
+    <script defer src="static/js/index.js"></script>
+
+    <!-- Structured Data for Academic Papers -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "ScholarlyArticle",
+          "headline": "PAPER_TITLE",
+          "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
+          "author": [
+            {
+              "@type": "Person",
+              "name": "FIRST_AUTHOR_NAME",
+              "affiliation": {
+                "@type": "Organization",
+                "name": "INSTITUTION_NAME"
+              }
+            },
+            {
+              "@type": "Person",
+              "name": "SECOND_AUTHOR_NAME",
+              "affiliation": {
+                "@type": "Organization",
+                "name": "INSTITUTION_NAME"
+              }
+            }
+          ],
+          "datePublished": "2024-01-01",
+          "publisher": {
+            "@type": "Organization",
+            "name": "CONFERENCE_OR_JOURNAL_NAME"
+          },
+          "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
+          "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
+          "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
+          "abstract": "FULL_ABSTRACT_TEXT_HERE",
+          "citation": "BIBTEX_CITATION_HERE",
+          "isAccessibleForFree": true,
+          "license": "https://creativecommons.org/licenses/by/4.0/",
+          "mainEntity": {
+            "@type": "WebPage",
+            "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
+          },
+          "about": [
+            {
+              "@type": "Thing",
+              "name": "RESEARCH_AREA_1"
+            },
+            {
+              "@type": "Thing",
+              "name": "RESEARCH_AREA_2"
+            }
+          ]
+        }
+    </script>
+
+    <!-- Website/Organization Structured Data -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "INSTITUTION_OR_LAB_NAME",
+          "url": "https://YOUR_INSTITUTION_WEBSITE.com",
+          "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
+          "sameAs": [
+            "https://twitter.com/YOUR_TWITTER_HANDLE",
+            "https://github.com/YOUR_GITHUB_USERNAME"
+          ]
+        }
+    </script>
+</head>
+<body>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+      <section class="hero">
+          <div class="hero-body">
+              <div class="container is-max-desktop">
+                  <div class="columns is-centered">
+                      <div class="column has-text-centered">
+                          <!-- TODO: Replace with your paper title -->
+                          <h1 class="title is-1 publication-title">Multi-illumination-interfered Neural Holography with Expanded Eyebox</h1>
+                          <div class="is-size-5 publication-authors">
+                              <!-- TODO: Replace with your paper authors and their personal links -->
+                              <span class="author-block">
+                                  <a href="https://scholar.google.com/citations?user=bbV-XhwAAAAJ&hl=en" target="_blank">Xinxing Xia</a><sup>1</sup>,
+                              </span>
+                              <span class="author-block">
+                                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Pengfei Mi</a><sup>1</sup>,
+                              </span>
+                              <span class="author-block">
+                                  <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Yiqing Tao</a><sup>1</sup>,
+                              </span>
+                              <span class="author-block">
+                                  <a href="https://scholar.google.com/citations?user=ijGrvk0AAAAJ&hl=en" target="_blank">Xiangyu Meng</a><sup>2</sup>,
+                              </span>
+                              <span class="author-block">
+                                  <a href="https://hku.welight.fun/wenbin/" target="_blank">Wenbin Zhou</a><sup>2</sup>,
+                              </span>
+                              <span class="author-block">
+                                  <a href="https://auto.shu.edu.cn/info/1343/11077.htm" target="_blank">Yingjie Yu</a><sup>1</sup>,
+                              </span>
+                              <span class="author-block">
+                                  <a href="https://www.eee.hku.hk/~evanpeng/" target="_blank">Yifan (Evan) Peng</a><sup>2</sup><sup>*</sup>
+                              </span>
+                          </div>
+
+                          <div class="is-size-5 publication-authors">
+                              <!-- TODO: Replace with your institution and conference/journal info -->
+                              <span class="author-block"><sup>1</sup>Shanghai University ,<sup>2</sup>The University of Hong Kong<br>IEEE Transactions on Visualization and Computer Graphics (ISMAR), 2025</span>
+                              <!-- TODO: Remove this line if no equal contribution -->
+                              <span class="eql-cntrb"><small><br><sup>*</sup>Corresponding author</small></span>
+                          </div>
+
+                          <div class="column has-text-centered">
+                              <div class="publication-links">
+                                  <!-- TODO: Update with your arXiv paper ID -->
+                                  <span class="link-block">
+                                      <a href="static/pdfs/ISMAR25_Multiangle_Holography_main.pdf" target="_blank"
+                                         class="external-link button is-normal is-rounded is-dark">
+                                          <span class="icon">
+                                              <i class="fas fa-file-pdf"></i>
+                                          </span>
+                                          <span>Paper</span>
+                                      </a>
+                                  </span>
+
+                                  <!-- TODO: Add your supplementary material PDF or remove this section -->
+                                  <span class="link-block">
+                                      <a href="static/pdfs/ISMAR25_Multiangle_Holography_sup.pdf" target="_blank"
+                                         class="external-link button is-normal is-rounded is-dark">
+                                          <span class="icon">
+                                              <i class="fas fa-file-pdf"></i>
+                                          </span>
+                                          <span>Supplementary</span>
+                                      </a>
+                                  </span>
+
+                                  <!-- TODO: Replace with your GitHub repository URL -->
+                                  <span class="link-block">
+                                      <a href="https://github.com/" target="_blank"
+                                         class="external-link button is-normal is-rounded is-dark">
+                                          <span class="icon">
+                                              <i class="fab fa-github"></i>
+                                          </span>
+                                          <span>Code - Coming soon...</span>
+                                      </a>
+                                  </span>
+
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <!-- Teaser image-->
+      <section class="hero teaser">
+          <div class="container is-max-desktop">
+              <div class="hero-body">
+                  <!-- TODO: Replace with your teaser video -->
+                  <img src="static/images/teaser.png" alt="teaser" loading="lazy" />
+                  <!-- TODO: Replace with your video description -->
+                  <h2 class="content has text justified">
+                      <b>Top-left</b>: Conceptual holographic display. Fiber laser outputs pass through BS, LP, and CL to illuminate the SLM.
+                      <b>Top-right</b>: Eyebox expansion schematic. Multi-angle illumination creates adjacent viewpoints on the eyepiece’s focal plane. Pupil shifts align viewpoints at center (blue), edge (yellow), or both simultaneously (purple).
+                      <b>Bottom</b>: Experimental single vs. dual illumination, with/without CITL.
+                      First row: Pupil centered at (0 mm, 0 mm). Dual illumination achieves clarity even at single-source spectrum edges.
+                      Second row: Single illumination shows limited quality. Dual maintains fidelity within combined spectral range, expanding eyebox. (Dual-light configuration simplified in experiments.)
+                  </h2>
+              </div>
+          </div>
+      </section>
+      <!-- End teaser image -->
+      <!-- Paper abstract -->
+      <section class="section hero is-light">
+          <div class="container is-max-desktop">
+              <div class="columns is-centered has-text-centered">
+                  <div class="column is-four-fifths">
+                      <h2 class="title is-3">Abstract</h2>
+                      <div class="content has-text-justified">
+                          <!-- TODO: Replace with your paper abstract -->
+                          <p>
+                              Holography has immense potential for near-eye displays in the realms of virtual and augmented reality (VR/AR), offering natural 3D depth cues through wavefront reconstruction. However, a critical challenge is balancing the field of view (FOV) with the eyebox, fundamentally constrained by the étendue limitation of current hardware. Additionally, holographic image quality is often compromised due to discrepancies between actual wave propagation behavior and simulation models. This study addresses these challenges by expanding the eyebox through the use of multi-angle illumination, and by enhancing image quality with end-to-end pupil-aware hologram optimization. Further, energy efficiency is significantly improved by incorporating higher-order diffractions and pupil constraints into the simulation. We explore a Pupil-HOGD optimization algorithm for multi-angle illumination and validate it with a dual-angle holographic display prototype. Integrated with camera calibration and tracked eye position, the developed Pupil-HOGD algorithm can improve image quality and expand the eyebox by 50% in the horizontal direction. We envision the proposed approach paves the way for extending the space-bandwidth product (SBP) of holographic displays, enabling broader applications in immersive, high-quality visual computing environments.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <!-- End paper abstract -->
+
+      <section class="section is-compact">
+          <div class="container is-max-desktop content">
+              <h2 class="title" data-eusoft-scrollable-element="1">Method</h2>
+              <div class="item">
+                  <p>
+                      We use a viewpoint spacing smaller than the pupil size to create a compact, continuous eyebox to ensure consistent, aligned holograms in near-eye displays. To address image aliasing introduced by the reduced spacing, a multi-angle illumination propagation framework is developed. This framework explicitly incorporates the dynamic pupil position and size to maintain consistent image quality across different viewpoints.
+                      <div style="text-align: center;">
+                          <img src="static/images/Propagation_under_multi-angle illum.png" alt="MY ALT TEXT" class="sec-image-large" />
+                      </div>
+                      <div class="content has text justified">
+                          <b>Left</b>: Schematic of propagation under multi-angle light illumination. The SLM is illuminated by the superposition of plane waves incident from four distinct angles. Four light sources hit the SLM plane on P0, and to the target plane on P1, P2, P3, and P4. The parallel light waves, corresponding to their respective angles of inclination, superimpose at the same overlapping position on the target plane to reconstruct the image.
+                          <b>Right</b>: Without algorithmic optimization, under horizontal dual-sources, the pupil position is moved along X, Y, and Z axes for simulations. When positioned at the origin, image overlap occurs. With X-axis pupil displacement, the result is similar to single-light-source imaging. Displacement along the Y-axis significantly degrades image quality due to a lack of vertical light source expansion. Z-axis displacement creates image overlap with arc-shaped artifacts due to aperture effects.
+                      </div>
+                      <div style="height: 50px;"></div>
+
+                      <div style="text-align: center;">
+                          <img src="static/images/P-HOGD_pipeline.png" alt="MY ALT TEXT" class="sec-image-large" />
+                      </div>
+                      <div class="content has text justified">
+                          Pipeline of Pupil-HOGD.
+                          Each wavefront is depicted with its amplitude (black) and phase (blue).
+                          Each dimension's spatial/frequency domain range is indicated, where N is the number of SLM pixels along the dimension, and p is the pixel pitch.
+                          The Fourier transform of the SLM wavefront is repeated in the frequency domain to consider high-order diffraction effects.
+                          This is then multiplied by a propagation kernel with attenuation and a pupil mask to generate the target wavefront.
+                          Finally, the loss function, comparing the target and the simulated images, is computed, and the phase pattern is updated through back-propagation using gradient descent.
+                      </div>
+                  </p>
+                  <br>
+              </div>
+
+      </section>
+
+
+      <section class="section is-compact">
+          <div class="container is-max-desktop content">
+              <h2 class="title" data-eusoft-scrollable-element="1">Results</h2>
+              <div class="item">
+                  <p>
+                      We conducted simulations to evaluate image quality under varying parameters, including different tilt angles and numbers of light sources.
+                      High image quality is preserved with two distinct light source angles, which significantly enlarges the eyebox.
+                      We built an experimental prototype using laser light sources from two distinct angles to validate proposed method.
+                      <div style="text-align: center;">
+                          <img src="static/images/Schematic_of_PITL2.png" alt="MY ALT TEXT" class="sec-image-large" />
+                      </div>
+                      <div class="content has text justified">
+                          <b>Left</b>: Display prototype. Two fiber laser (FL) outputs pass through a beam splitter (BS), linear polarizer (LP), and collimating lens (CL) to illuminate the SLM. The target image is magnified by the eyepiece and captured by an industrial camera, simulating the human eye. The camera is mounted on a 3D moving stage to measure the eyebox.
+                          <b>Right</b>: Schematic of the Pupil-HOGD with CITL calibration process. The light field in the target plane is formed by the superposition of multi-angle illumination. A camera with a lens simulates the human eye, with its aperture representing the pupil size, and captures the reconstructed image as the feedback.
+                              The loss between the amplitude of the captured image and the target image is computed, and the phase is iteratively updated through back-propagation until convergence. Pupil size is incorporated in the back-propagation as a filter M(fx,fy) in the frequency domain.
+                        </div>
+                  </p>
+              </div>
+      </section>
+
+
+
+      <!-- Image carousel -->
+      <section class="hero is-small">
+          <div class="hero-body-l">
+              <div class="container">
+                  <div id="results-carousel" class="carousel results-carousel">
+                      <div class="item">
+                          <!-- TODO: Replace with your research result images -->
+                          <img src="static/images/simulation_results.png" alt="First research result visualization" loading="lazy" />
+                          <!-- TODO: Replace with description of this result -->
+                          <h2 class="subtitle has-text-centered">
+                              Comparison of hologram optimization algorithms across various pupil positions. Each row corresponds to pupil positions at (-1.5 mm, 0 mm), (0 mm, 0 mm), and (1.5 mm, 0 mm). The first column visualizes the pupil position in the frequency domain, while columns two to four display the results of the SGD, HOGD, and Pupil-HOGD algorithms, respectively. The fifth column showcases the optimized hologram using the Pupil-HOGD algorithm. The SGD algorithm yields the lowest PSNR due to neglecting higher-order diffraction. In contrast, the HOGD algorithm slightly improves but still ignores the pupil’s low-pass filtering effect.
+                              The Pupil-HOGD algorithm outperforms the others by accounting for the constraining effect of pupil position on light source utilization at various angles.
+                          </h2>
+                      </div>
+                      <div class="item">
+                          <!-- Your image here -->
+                          <img src="static/images/Curve_of_PSNR.png" alt="Second research result visualization" loading="lazy" />
+                          <h2 class="subtitle has-text-centered">
+                              Comparison of simulated images generated by various algorithms with varying pupil positions under dual-angle illumination, evaluated using the PSNR metric.
+                              Here, the purple plot represents Pupil-HOGD, blue represents HOGD, and yellow represents SGD. The x-axis indicates the pupil position along the x-direction of the reconstruction, with different line styles denoting the pupil size.
+                              The Pupil-HOGD algorithm achieves the best results at all positions, particularly at (±1.5 mm, 0 mm), where dual-light source interference is minimal. In contrast, the Pupil-HOGD algorithm performs slightly worse at (0~mm, 0~mm) due to light interference from dual sources.
+                              HOGD better predicts the image quality on actual display than SGD as it accounts for higher diffraction orders.
+                              Additionally, a larger pupil preserves more information in frequency-domain, enhancing image reconstruction quality.
+                          </h2>
+                      </div>
+                      <div class="item">
+                          <!-- Your image here -->
+                          <img src="static/images/SingleAngle4_5.png" alt="Third research result visualization" loading="lazy" />
+                          <h2 class="subtitle has-text-centered">
+                              Experimental results of HOGD, Pupil-HOGD, and Pupil-HOGD with CITL algorithm at various pupil positions under single-angle illumination. The pupil positions range from -2~mm to 2~mm in 1~mm intervals.
+                              The first column shows the frequency-domain filtering corresponding to different pupil positions.
+                              The second column displays the HOGD result, where pupil constraints are not incorporated into the algorithm.
+                              The third column presents the Pupil-HOGD results, which include the pupil's constraints in the optimization process.
+                              The fourth column illustrates the Pupil-HOGD-CITL result, where camera calibration further enhances Pupil-HOGD performance
+                          </h2>
+                      </div>
+                      <div class="item">
+                          <!-- Your image here -->
+                          <img src="static/images/DualAngle3_5.png" alt="Fourth research result visualization" loading="lazy" />
+                          <h2 class="subtitle has-text-centered">
+                              Experimental results of Pupil-HOGD, and Pupil-HOGD with the CITL algorithm at various pupil positions under dual-angle illumination.
+                              Pupil positions range from -3.0 mm to 3.0 mm in 1.5 mm intervals.
+                              The first column illustrates the frequency-domain filtering results for different pupil positions.
+                              The second column presents the results of Pupil-HOGD. The third column shows the results of Pupil-HOGD with CITL calibration. Compared to single-angle illumination, dual-angle illumination extends the eyebox by 50%.
+                          </h2>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <!-- End image carousel -->
+      <!--BibTex citation -->
+      <section class="section" id="BibTeX">
+          <div class="container is-max-desktop content">
+              <div class="bibtex-header">
+                  <h2 class="title">BibTeX</h2>
+                  <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+                      <i class="fas fa-copy"></i>
+                      <span class="copy-text">Copy</span>
+                  </button>
+              </div>
+              <pre id="bibtex-code"><code>
+    @article{MultiangleHolography2025,
+    title={Multi-illumination-interfered Neural Holography with Expanded Eyebox},
+    author={Xia, Xinxing and Mi, Pengfei and Tao, Yiqing and Meng, Xiangyu and Zhou, Wenbin and Yu, Yingjie and Peng, Yifan},
+    journal={IEEE Transactions on Visualization and Computer Graphics},
+    year={2025},
+    url={TBD},
+    doi={10.1109/TVCG.2025.3616793}
+    }
+</code></pre>
+          </div>
+      </section>
+      <!--End BibTex citation -->
+
+
+      <footer class="footer">
+          <div class="container">
+              <div class="columns is-centered">
+                  <div class="column is-8">
+                      <div class="content">
+
+                          <p>
+                              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+                              You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+                                  Creative
+                                  Commons Attribution-ShareAlike 4.0 International License
+                              </a>.
+                          </p>
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </footer>
+
+      <!-- Statcounter tracking code -->
+      <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+      <!-- End of Statcounter Code -->
+
+</body>
+  </html>
