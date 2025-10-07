@@ -352,8 +352,27 @@
                       <div class="content has text justified">
                           <b>Left</b>: Display prototype. Two fiber laser (FL) outputs pass through a beam splitter (BS), linear polarizer (LP), and collimating lens (CL) to illuminate the SLM. The target image is magnified by the eyepiece and captured by an industrial camera, simulating the human eye. The camera is mounted on a 3D moving stage to measure the eyebox.
                           <b>Right</b>: Schematic of the Pupil-HOGD with CITL calibration process. The light field in the target plane is formed by the superposition of multi-angle illumination. A camera with a lens simulates the human eye, with its aperture representing the pupil size, and captures the reconstructed image as the feedback.
-                              The loss between the amplitude of the captured image and the target image is computed, and the phase is iteratively updated through back-propagation until convergence. Pupil size is incorporated in the back-propagation as a filter M(fx,fy) in the frequency domain.
-                        </div>
+                          The loss between the amplitude of the captured image and the target image is computed, and the phase is iteratively updated through back-propagation until convergence. Pupil size is incorporated in the back-propagation as a filter M(fx,fy) in the frequency domain.
+                      </div>
+
+                      <div style="text-align: center;">
+                          <img src="static/images/simulation_results.png" alt="MY ALT TEXT" class="sec-image-large" />
+                      </div>
+                      <div class="content has text justified">
+                          Comparison of hologram optimization algorithms across various pupil positions. Each row corresponds to pupil positions at (-1.5 mm, 0 mm), (0 mm, 0 mm), and (1.5 mm, 0 mm). The first column visualizes the pupil position in the frequency domain, while columns two to four display the results of the SGD, HOGD, and Pupil-HOGD algorithms, respectively. The fifth column showcases the optimized hologram using the Pupil-HOGD algorithm. The SGD algorithm yields the lowest PSNR due to neglecting higher-order diffraction. In contrast, the HOGD algorithm slightly improves but still ignores the pupil’s low-pass filtering effect. The Pupil-HOGD algorithm outperforms the others by accounting for the constraining effect of pupil position on light source utilization at various angles.
+                      </div>
+
+                      <div style="text-align: center;">
+                          <img src="static/images/SingleAngle4_5.png" alt="MY ALT TEXT" class="sec-image-large" />
+                      </div>
+                      <div class="content has text justified">
+                          Experimental results of HOGD, Pupil-HOGD, and Pupil-HOGD with CITL algorithm at various pupil positions under single-angle illumination. The pupil positions range from -2~mm to 2~mm in 1~mm intervals.
+                          The first column shows the frequency-domain filtering corresponding to different pupil positions.
+                          The second column displays the HOGD result, where pupil constraints are not incorporated into the algorithm.
+                          The third column presents the Pupil-HOGD results, which include the pupil's constraints in the optimization process.
+                          The fourth column illustrates the Pupil-HOGD-CITL result, where camera calibration further enhances Pupil-HOGD performance
+                      </div>
+
                   </p>
               </div>
       </section>
@@ -367,43 +386,24 @@
                   <div id="results-carousel" class="carousel results-carousel">
                       <div class="item">
                           <!-- TODO: Replace with your research result images -->
-                          <img src="static/images/simulation_results.png" alt="First research result visualization" loading="lazy" />
+                          <img src="static/images/-3MM.gif" alt="First research result visualization" loading="lazy" />
                           <!-- TODO: Replace with description of this result -->
                           <h2 class="subtitle has-text-centered">
-                              Comparison of hologram optimization algorithms across various pupil positions. Each row corresponds to pupil positions at (-1.5 mm, 0 mm), (0 mm, 0 mm), and (1.5 mm, 0 mm). The first column visualizes the pupil position in the frequency domain, while columns two to four display the results of the SGD, HOGD, and Pupil-HOGD algorithms, respectively. The fifth column showcases the optimized hologram using the Pupil-HOGD algorithm. The SGD algorithm yields the lowest PSNR due to neglecting higher-order diffraction. In contrast, the HOGD algorithm slightly improves but still ignores the pupil’s low-pass filtering effect.
-                              The Pupil-HOGD algorithm outperforms the others by accounting for the constraining effect of pupil position on light source utilization at various angles.
+                              -3 mm
                           </h2>
                       </div>
                       <div class="item">
                           <!-- Your image here -->
-                          <img src="static/images/Curve_of_PSNR.png" alt="Second research result visualization" loading="lazy" />
+                          <img src="static/images/0MM.gif" alt="Second research result visualization" loading="lazy" />
                           <h2 class="subtitle has-text-centered">
-                              Comparison of simulated images generated by various algorithms with varying pupil positions under dual-angle illumination, evaluated using the PSNR metric.
-                              Here, the purple plot represents Pupil-HOGD, blue represents HOGD, and yellow represents SGD. The x-axis indicates the pupil position along the x-direction of the reconstruction, with different line styles denoting the pupil size.
-                              The Pupil-HOGD algorithm achieves the best results at all positions, particularly at (±1.5 mm, 0 mm), where dual-light source interference is minimal. In contrast, the Pupil-HOGD algorithm performs slightly worse at (0~mm, 0~mm) due to light interference from dual sources.
-                              HOGD better predicts the image quality on actual display than SGD as it accounts for higher diffraction orders.
-                              Additionally, a larger pupil preserves more information in frequency-domain, enhancing image reconstruction quality.
+                              0 mm
                           </h2>
                       </div>
                       <div class="item">
                           <!-- Your image here -->
-                          <img src="static/images/SingleAngle4_5.png" alt="Third research result visualization" loading="lazy" />
+                          <img src="static/images/3MM.gif" alt="Third research result visualization" loading="lazy" />
                           <h2 class="subtitle has-text-centered">
-                              Experimental results of HOGD, Pupil-HOGD, and Pupil-HOGD with CITL algorithm at various pupil positions under single-angle illumination. The pupil positions range from -2~mm to 2~mm in 1~mm intervals.
-                              The first column shows the frequency-domain filtering corresponding to different pupil positions.
-                              The second column displays the HOGD result, where pupil constraints are not incorporated into the algorithm.
-                              The third column presents the Pupil-HOGD results, which include the pupil's constraints in the optimization process.
-                              The fourth column illustrates the Pupil-HOGD-CITL result, where camera calibration further enhances Pupil-HOGD performance
-                          </h2>
-                      </div>
-                      <div class="item">
-                          <!-- Your image here -->
-                          <img src="static/images/DualAngle3_5.png" alt="Fourth research result visualization" loading="lazy" />
-                          <h2 class="subtitle has-text-centered">
-                              Experimental results of Pupil-HOGD, and Pupil-HOGD with the CITL algorithm at various pupil positions under dual-angle illumination.
-                              Pupil positions range from -3.0 mm to 3.0 mm in 1.5 mm intervals.
-                              The first column illustrates the frequency-domain filtering results for different pupil positions.
-                              The second column presents the results of Pupil-HOGD. The third column shows the results of Pupil-HOGD with CITL calibration. Compared to single-angle illumination, dual-angle illumination extends the eyebox by 50%.
+                              +3 mm
                           </h2>
                       </div>
                   </div>

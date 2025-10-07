@@ -103,7 +103,8 @@ body {
     padding: 4rem;
 }
 .hero-body-l {
-    padding: 4rem 4rem;
+    margin: -2rem 0 0rem 0;
+    padding: 0rem 0rem;
 }
 
 .teaser .hero-body {
@@ -257,14 +258,15 @@ body {
 }
 
 .results-carousel {
-  overflow: hidden;
-  padding: 1rem 0;
+    overflow: hidden;
+    margin: 0rem 11rem 2rem 11rem;
+    padding: 1rem;
 }
 
 .results-carousel .item {
-  margin: 1rem;
+  margin: 2rem 4rem 2rem 4rem;
   overflow: hidden;
-  padding: 1.5rem;
+  padding: 1rem;
   font-size: 0;
   background: var(--background-primary);
   border-radius: var(--border-radius-lg);
